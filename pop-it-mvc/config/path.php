@@ -4,10 +4,6 @@ return [
     'root' => 'pop-it-mvc',
     //Настройка директории с маршрутами
     'routes' => 'routes',
-    'classes' => [
-        'app',
-        'core'
-    ],
     //Настройка директории с представлениями
     'views' => 'views'
 ];
