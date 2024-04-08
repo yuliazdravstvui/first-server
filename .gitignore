@@ -1,5 +1,5 @@
 .idea
 access.log
 error.log
-/vendor/
+vendor/
 composer.lock
