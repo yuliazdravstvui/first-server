@@ -49,6 +49,11 @@ class Site
         app()->route->redirect('/hello');
     }
 
-
-
+    public function addHum(Request $request): string
+    {
+        //Если просто обращение к странице, то отобразить форму
+        if ($request->method === 'GET') {
+            return new View('site.addHum');
+        }
+    }
 }
