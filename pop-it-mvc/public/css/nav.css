@@ -1,0 +1,48 @@
+.montserrat {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+.head{
+    margin-bottom: 40px;
+
+}
+.head>img:first-child{
+    margin-right: 5px;
+    margin-bottom: -15px;
+}
+nav{
+    width: 200px;
+    margin-left: 30px;
+    margin-top: 40px;
+    gap: 10px;
+    display: flex;
+
+    flex-direction: column;
+
+}
+header{
+    gap: 10px;
+    justify-content: center;
+    flex-direction: column;
+}
+body{
+    font-family: "Montserrat", sans-serif;
+    display: flex;
+}
+a{
+    justify-items: center;
+    width: 213px;
+    height: 43px;
+    font-weight: 500;
+    font-size: 14px;
+    color: #505050;
+
+    text-decoration: none;
+}
+a:hover{
+
+    border-radius: 3px;
+
+    background: #e4dfd8;
+}
