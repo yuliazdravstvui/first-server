@@ -86,4 +86,11 @@ class Site
             return new View('site.issue');
         }
     }
+    public function accept(Request $request): string
+    {
+        //Если просто обращение к странице, то отобразить форму
+        if ($request->method === 'GET') {
+            return new View('site.accept');
+        }
+    }
 }
