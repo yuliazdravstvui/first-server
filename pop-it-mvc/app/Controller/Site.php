@@ -56,4 +56,20 @@ class Site
             return new View('site.addHum');
         }
     }
+
+    public function books(Request $request): string
+    {
+        //Если просто обращение к странице, то отобразить форму
+        if ($request->method === 'GET') {
+            return new View('site.books');
+        }
+    }
+
+    public function readers(Request $request): string
+    {
+        //Если просто обращение к странице, то отобразить форму
+        if ($request->method === 'GET') {
+            return new View('site.readers');
+        }
+    }
 }

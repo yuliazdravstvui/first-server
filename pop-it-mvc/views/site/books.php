@@ -1,39 +1,50 @@
 <link rel ="stylesheet" href="/pop-it-mvc/public/css/books.css">
 <h1>Книги</h1>
-<div class="books">
-    <div class="book">
-        <div class="info">
-            <div class="name">
-                <h3>Война и мир</h3>
-                <p>1493 ₽</p>
+<div class="page">
+    <div class="books">
+        <div class="one-book">
+            <div class="book">
+                <div class="info">
+                    <div class="name">
+                        <h3>Война и мир</h3>
+                        <p>1493 ₽</p>
+                    </div>
+                    <p>1867 г.</p>
+                    <p>Толстой Лев Николаевич</p>
+                </div>
+                <button>Подробнее</button>
             </div>
-            <p>1867 г.</p>
-            <p>Толстой Лев Николаевич</p>
+            <img src="img/история.svg"
         </div>
-        <button type="submit">Подробнее</button>
-    </div>
-    <div class="book">
-        <div class="info">
-            <div class="name">
-                <h3>Война и мир</h3>
-                <p>1493 ₽</p>
+
+        <div class="one-book">
+            <div class="book">
+                <div class="info">
+                    <div class="name">
+                        <h3>Война и мир</h3>
+                        <p>1493 ₽</p>
+                    </div>
+                    <p>1867 г.</p>
+                    <p>Толстой Лев Николаевич</p>
+                </div>
+                <button>Подробнее</button>
             </div>
-            <p>1867 г.</p>
-            <p>Толстой Лев Николаевич</p>
+            <img class="logo" src="img/история.svg"
         </div>
-        <button type="submit">Подробнее</button>
-    </div>
-    <div class="book">
-        <div class="info">
-            <div class="name">
-                <h3>Война и мир</h3>
-                <p>1493 ₽</p>
+        <div class="one-book">
+            <div class="book">
+                <div class="info">
+                    <div class="name">
+                        <h3>Война и мир</h3>
+                        <p>1493 ₽</p>
+                    </div>
+                    <p>1867 г.</p>
+                    <p>Толстой Лев Николаевич</p>
+                </div>
+                <button>Подробнее</button>
             </div>
-            <p>1867 г.</p>
-            <p>Толстой Лев Николаевич</p>
+            <img class="logo" src="img/история.svg"
         </div>
-        <button type="submit">Подробнее</button>
     </div>
 </div>
-<button type="submit">Выдать книгу читателю</button>
 
