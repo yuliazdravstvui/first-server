@@ -12,9 +12,9 @@
                     <p>+7 - 983 - 343 - 09 - 38</p>
                 </div>
                 <button>Подробнее</button>
-                <?php
-                echo '<a href="/pop-it-mvc/issue" class="button_book">Выдать книгу</a>';
-                ?>
+<!--                --><?php
+//                echo '<a href="/pop-it-mvc/issue" class="button_book">Выдать книгу</a>';
+//                ?>
             </div>
             <img src="img/история.svg"
         </div>
@@ -28,9 +28,9 @@
                     <p>+7 - 983 - 343 - 09 - 38</p>
                 </div>
                 <button>Подробнее</button>
-                <?php
-                echo '<a href="/pop-it-mvc/issue" class="button_book">Выдать книгу</a>';
-                ?>
+<!--                --><?php
+//                echo '<a href="/pop-it-mvc/issue" class="button_book">Выдать книгу</a>';
+//                ?>
             </div>
             <img src="img/история.svg"
         </div>
@@ -44,9 +44,9 @@
                     <p>+7 - 983 - 343 - 09 - 38</p>
                 </div>
                 <button>Подробнее</button>
-                <?php
-                echo '<a href="/pop-it-mvc/issue" class="button_book">Выдать книгу</a>';
-                ?>
+<!--                --><?php
+//                echo '<a href="/pop-it-mvc/issue" class="button_book">Выдать книгу</a>';
+//                ?>
             </div>
             <img src="img/история.svg"
         </div>

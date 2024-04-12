@@ -26,7 +26,7 @@
                     <a href="<?= app()->route->getUrl('/addHum') ?>">Добавить читателя </a>
                     <a href="<?= app()->route->getUrl('/books') ?>">Книги</a>
                     <a href="<?= app()->route->getUrl('/readers') ?>">Читатели</a>
-                    <a href="<?= app()->route->getUrl('/issue') ?>">Выдача</a>
+<!--                    <a href="--><?php //= app()->route->getUrl('/issue') ?><!--">Выдача</a>-->
                     <a href="<?= app()->route->getUrl('/logout') ?>">Выход </a>
             <?php else: ?>
                 <a href="<?= app()->route->getUrl('/logout') ?>">Выход </a>
