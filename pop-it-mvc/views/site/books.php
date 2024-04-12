@@ -7,12 +7,16 @@
                 <div class="info">
                     <div class="name">
                         <h3>Война и мир</h3>
-                        <p>1493 ₽</p>
+                        <p class="price">1493 ₽</p>
+                        <p class="status">Статус: Выдана</p>
                     </div>
                     <p>1867 г.</p>
                     <p>Толстой Лев Николаевич</p>
                 </div>
-                <button>Подробнее</button>
+                <?php
+                echo '<a href="/pop-it-mvc/book" class="button">Подробнее</a>';
+                echo '<a href="/pop-it-mvc/issue" class="button_book">Выдать книгу</a>';
+                ?>
             </div>
             <img src="img/история.svg"
         </div>
@@ -22,12 +26,16 @@
                 <div class="info">
                     <div class="name">
                         <h3>Война и мир</h3>
-                        <p>1493 ₽</p>
+                        <p class="price">1493 ₽</p>
+                        <p class="status">Статус: Выдана</p>
                     </div>
                     <p>1867 г.</p>
                     <p>Толстой Лев Николаевич</p>
                 </div>
-                <button>Подробнее</button>
+                <?php
+                echo '<a href="/pop-it-mvc/book" class="button">Подробнее</a>';
+                echo '<a href="/pop-it-mvc/issue" class="button_book">Выдать книгу</a>';
+                ?>
             </div>
             <img class="logo" src="img/история.svg"
         </div>
@@ -36,12 +44,16 @@
                 <div class="info">
                     <div class="name">
                         <h3>Война и мир</h3>
-                        <p>1493 ₽</p>
+                        <p class="price">1493 ₽</p>
+                        <p class="status">Статус: Выдана</p>
                     </div>
                     <p>1867 г.</p>
                     <p>Толстой Лев Николаевич</p>
                 </div>
-                <button>Подробнее</button>
+                <?php
+                echo '<a href="/pop-it-mvc/book" class="button">Подробнее</a>';
+                echo '<a href="/pop-it-mvc/issue" class="button_book">Выдать книгу</a>';
+                ?>
             </div>
             <img class="logo" src="img/история.svg"
         </div>

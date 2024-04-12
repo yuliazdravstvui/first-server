@@ -72,4 +72,18 @@ class Site
             return new View('site.readers');
         }
     }
+    public function book(Request $request): string
+    {
+        //Если просто обращение к странице, то отобразить форму
+        if ($request->method === 'GET') {
+            return new View('site.book');
+        }
+    }
+    public function issue(Request $request): string
+    {
+        //Если просто обращение к странице, то отобразить форму
+        if ($request->method === 'GET') {
+            return new View('site.issue');
+        }
+    }
 }

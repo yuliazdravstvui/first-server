@@ -1,1 +1,2 @@
-<h2><?= $message ?? ''; ?></h2>
+<link rel ="stylesheet" href="/pop-it-mvc/public/css/hello.css">
+<h1><?= $message ?? ''; ?></h1>

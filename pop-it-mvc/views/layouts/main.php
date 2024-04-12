@@ -15,22 +15,27 @@
         <img src="img/логотип.svg">
         <img src="img/Библиотека.svg">
         </div>
-<!--        <a href="--><?php //= app()->route->getUrl('/hello') ?><!--">Главная</a>-->
         <?php
-        if (!app()->auth::check()):
-            ?>
+            if (!app()->auth::check()):
+                ?>
             <a href="<?= app()->route->getUrl('/login') ?>">Вход</a>
-<!--            <a href="--><?php //= app()->route->getUrl('/signup') ?><!--">Регистрация</a>-->
-        <?php
-        else:
+        <?php else: ?>
+            <?php
+                if (!app()->auth::checkRole()):
+                ?>
+                    <a href="<?= app()->route->getUrl('/addHum') ?>">Добавить читателя </a>
+                    <a href="<?= app()->route->getUrl('/books') ?>">Книги</a>
+                    <a href="<?= app()->route->getUrl('/readers') ?>">Читатели</a>
+                    <a href="<?= app()->route->getUrl('/issue') ?>">Выдача</a>
+                    <a href="<?= app()->route->getUrl('/logout') ?>">Выход </a>
+            <?php else: ?>
+                <a href="<?= app()->route->getUrl('/logout') ?>">Выход </a>
+                <a href="<?= app()->route->getUrl('/addLib') ?>">Добавить библиотекаря </a>
+            <?php
+                endif;
             ?>
-            <a href="<?= app()->route->getUrl('/logout') ?>">Выход </a>
-            <a href="<?= app()->route->getUrl('/addLib') ?>">Добавить библиотекаря </a>
-            <a href="<?= app()->route->getUrl('/addHum') ?>">Добавить читателя </a>
-            <a href="<?= app()->route->getUrl('/books') ?>">Книги</a>
-            <a href="<?= app()->route->getUrl('/readers') ?>">Читатели</a>
         <?php
-        endif;
+            endif;
         ?>
     </nav>
 </header>
