@@ -5,6 +5,8 @@ namespace Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Src\Auth\IdentityInterface;
+use Src\Request;
+use Src\View;
 
 class User extends Model implements IdentityInterface
 {
@@ -42,5 +44,12 @@ class User extends Model implements IdentityInterface
     {
         return self::where(['login' => $credentials['login'],
             'password' => md5($credentials['password'])])->first();
+    }
+    public function addLib(Request $request): string
+    {
+        if ($request->method === 'POST' && User::create($request->all())) {
+            app()->route->redirect('/addLib');
+        }
+        return new View('site.addLib');
     }
 }
