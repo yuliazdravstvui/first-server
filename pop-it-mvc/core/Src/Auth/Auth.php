@@ -59,11 +59,11 @@ class Auth
     }
 
     //Проверка то что роль пользователя админ
-    public static function checkRole():bool
-    {
-        $userRole = self::user()::where('id', '=', Session::get('id'))->first()->id_role;
-        if ($userRole === 1) return true;
-        else return false;
-    }
+//    public static function checkRole():bool
+//    {
+//        $userRole = self::user()::where('id', '=', Session::get('id'))->first()->id_role;
+//        if ($userRole === 1) return true;
+//        else return false;
+//    }
 
 }

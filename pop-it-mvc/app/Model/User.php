@@ -4,8 +4,10 @@ namespace Model;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Src\Auth\Auth;
 use Src\Auth\IdentityInterface;
 use Src\Request;
+use Src\Session;
 use Src\View;
 
 class User extends Model implements IdentityInterface
@@ -52,4 +54,11 @@ class User extends Model implements IdentityInterface
         }
         return new View('site.addLib');
     }
+    public static function checkRole():bool
+    {
+        $userRole = Auth::user()::where('id', '=', Session::get('id'))->first()->id_role;
+        if ($userRole === 1) return true;
+        else return false;
+    }
+
 }
