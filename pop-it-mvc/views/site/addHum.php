@@ -11,8 +11,6 @@
             Отчество <input type="text" name="patronymic">
             Адрес проживания <input type="text" name="address">
             Контактный телефон <input type="number" name="phone">
-            Логин <input type="text" name="login">
-            Пароль <input type="password" name="password">
             <button>Добавить</button>
         </div>
     </form>
