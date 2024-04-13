@@ -47,13 +47,7 @@ class User extends Model implements IdentityInterface
         return self::where(['login' => $credentials['login'],
             'password' => md5($credentials['password'])])->first();
     }
-    public function addLib(Request $request): string
-    {
-        if ($request->method === 'POST' && User::create($request->all())) {
-            app()->route->redirect('/addLib');
-        }
-        return new View('site.addLib');
-    }
+
     public static function checkRole():bool
     {
         $userRole = Auth::user()::where('id', '=', Session::get('id'))->first()->id_role;

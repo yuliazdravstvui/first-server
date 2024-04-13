@@ -58,7 +58,7 @@ class Auth
         return true;
     }
 
-    //Проверка то что роль пользователя админ
+//    Проверка то что роль пользователя админ
 //    public static function checkRole():bool
 //    {
 //        $userRole = self::user()::where('id', '=', Session::get('id'))->first()->id_role;

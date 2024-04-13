@@ -21,7 +21,8 @@
             <a href="<?= app()->route->getUrl('/login') ?>">Вход</a>
         <?php else: ?>
             <?php
-                if (!app()->auth::checkRole()):
+                $user = app()->auth::user();
+                if ($user&&!$user->checkRole()):
                 ?>
                     <a href="<?= app()->route->getUrl('/addHum') ?>">Добавить читателя </a>
                     <a href="<?= app()->route->getUrl('/books') ?>">Книги</a>
@@ -29,10 +30,10 @@
                     <a href="<?= app()->route->getUrl('/accept') ?>">Принять книгу</a>
 <!--                    <a href="--><?php //= app()->route->getUrl('/issue') ?><!--">Выдача</a>-->
                     <a href="<?= app()->route->getUrl('/logout') ?>">Выход </a>
-            <?php else: ?>
-                <a href="<?= app()->route->getUrl('/logout') ?>">Выход </a>
-                <a href="<?= app()->route->getUrl('/addLib') ?>">Добавить библиотекаря </a>
-            <?php
+                <?php else: ?>
+                    <a href="<?= app()->route->getUrl('/logout') ?>">Выход </a>
+                    <a href="<?= app()->route->getUrl('/addLib') ?>">Добавить библиотекаря </a>
+                <?php
                 endif;
             ?>
         <?php
