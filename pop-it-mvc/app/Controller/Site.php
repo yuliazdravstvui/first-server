@@ -2,6 +2,7 @@
 
 namespace Controller;
 
+use Reader\Reader;
 use Src\Auth\Auth;
 use Model\User;
 use Model\Post;
@@ -25,29 +26,11 @@ class Site
 
     public function signup(Request $request): string
     {
-        if ($request->method === 'POST') {
-
-            $validator = new Validator($request->all(), [
-                'name' => ['required'],
-                'login' => ['required', 'unique:users,login'],
-                'password' => ['required']
-            ], [
-                'required' => 'Поле :field пусто',
-                'unique' => 'Поле :field должно быть уникально'
-            ]);
-
-            if($validator->fails()){
-                return new View('site.signup',
-                    ['message' => json_encode($validator->errors(), JSON_UNESCAPED_UNICODE)]);
-            }
-
-            if (User::create($request->all())) {
-                app()->route->redirect('/login');
-            }
+        if ($request->method === 'POST' && User::create($request->all())) {
+            app()->route->redirect('/go');
         }
         return new View('site.signup');
     }
-
     public function login(Request $request): string
     {
         //Если просто обращение к странице, то отобразить форму
@@ -70,10 +53,10 @@ class Site
 
     public function addHum(Request $request): string
     {
-        //Если просто обращение к странице, то отобразить форму
-        if ($request->method === 'GET') {
-            return new View('site.addHum');
+        if ($request->method === 'POST' && Reader::create($request->all())) {
+            app()->route->redirect('/go');
         }
+        return new View('site.addHum');
     }
 
     public function books(Request $request): string

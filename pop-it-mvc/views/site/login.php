@@ -10,6 +10,8 @@
     ?>
 
     <form method="post">
+        <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
+
         <img class="logo" src="img/logo.svg"
         <h2>Библиотека</h2>
         <div class="login">
@@ -19,6 +21,7 @@
         </div>
 
     </form>
+</div>
 </div>
 
 <?php endif;
