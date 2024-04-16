@@ -14,14 +14,12 @@ h1{
 
 }
 .input-button-container {
-    font-family: "Montserrat", sans-serif;
-    color: #505050;
+    margin-bottom: 20px;
     border: 2px solid #e4dfd8;
     border-radius: 5px;
     width: 494px;
     height: 40px;
     display: flex;
-
 
 }
 
@@ -38,6 +36,7 @@ h1{
     width: 147px;
     height: 40px;
     background: #d8c3a4;
+    color: #787878;
 }
 .name>h3{
     font-weight: 700;
@@ -62,7 +61,23 @@ h1{
     color: #e4dfd8;
 }
 .page{
+    font-family: "Montserrat", sans-serif;
     margin-left: 74px;
+}
+p{
+    font-size: 16px;
+    color: #787878;
+    font-family: "Montserrat", sans-serif;
+}
+option{
+    font-size: 16px;
+    color: #787878;
+    font-family: "Montserrat", sans-serif;
+}
+select{
+    font-size: 16px;
+    color: #787878;
+    font-family: "Montserrat", sans-serif;
 }
 h4{
     font-weight: 700;
@@ -104,23 +119,33 @@ h4{
     width: 400px;
     height: 60px;
 }
-.form > p{
-    font-weight: 500;
-    font-size: 15px;
+fieldset{
     color: #787878;
+    margin-bottom: 20px;
 }
-.book_list{
-    font-family: "Montserrat", sans-serif;
-    color: #505050;
+.input-container {
+    flex-direction: column;
+    margin-bottom: 20px;
     border: 2px solid #e4dfd8;
     border-radius: 5px;
-
-    height: 40px;
+    width: 494px;
     display: flex;
+
 }
-.book_list input {
+
+.input-container input {
     flex-grow: 1; /* Поле занимает всё доступное пространство */
     border: none; /* Границы отсутствуют */
     padding: 5px;
+    margin-right: 20px;
     outline: none; /* Очертание при фокусе отсутствует */
+}
+
+.input-container button {
+    border: none;
+    border-radius: 0 3px 3px 0;
+    width: 100px;
+    height: 40px;
+    background: #d8c3a4;
+    color: #787878;
 }

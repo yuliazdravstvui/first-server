@@ -23,7 +23,9 @@
                     </div>
                     <h3>Корнилова Юлия Константиновна</h3>
                     <p>+7 - 983 - 343 - 09 - 38</p>
-                    <button>Подробнее</button>
+                    <?php
+                    echo '<a href="/pop-it-mvc/reader" class="button_book">Подробнее</a>';
+                    ?>
                 </div>
                 <div class="date">
                     <p class="status">Статус: Выдана</p>
@@ -42,7 +44,9 @@
                     </div>
                     <h3>Корнилова Юлия Константиновна</h3>
                     <p>+7 - 983 - 343 - 09 - 38</p>
-                    <button>Подробнее</button>
+                    <?php
+                    echo '<a href="/pop-it-mvc/reader" class="button_book">Подробнее</a>';
+                    ?>
                 </div>
                 <div class="date">
                     <p class="status">Статус: Выдана</p>
@@ -61,7 +65,9 @@
                     </div>
                     <h3>Корнилова Юлия Константиновна</h3>
                     <p>+7 - 983 - 343 - 09 - 38</p>
-                    <button>Подробнее</button>
+                    <?php
+                    echo '<a href="/pop-it-mvc/reader" class="button_book">Подробнее</a>';
+                    ?>
                 </div>
                 <div class="date">
                     <p class="status">Статус: Выдана</p>

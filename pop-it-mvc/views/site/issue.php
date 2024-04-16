@@ -1,17 +1,31 @@
 <link rel ="stylesheet" href="/pop-it-mvc/public/css/issue.css">
 <h1>Выдача книги</h1>
 <div class="page">
-    <div class="inform">
-        <div class="name">
-            <h3>Война и мир</h3>
-        </div>
-        <p>1867 г.</p>
-        <p>Толстой Лев Николаевич</p>
+    <div class="form">
+            <p>Книга:</p>
+            <div class="book_list">
+                <input type="text" autocomplete="off" list="books" placeholder="Поиск...">
+                <datalist id="books">
+                    <?php
+                    foreach ($book as $book){
+                        echo "<option value=\"$book->title\">$book->title</option>";
+                    }
+                    ?>
+                </datalist>
+            </div>
+
     </div>
-    <div class="input-button-container">
-        <input type="text" placeholder="Читательский билет №" />
-        <button type="button">Найти</button> <!-- Иконка увеличительного стекла -->
-    </div>
+<!--    <div class="inform">-->
+<!--        <div class="name">-->
+<!--            <h3>Война и мир</h3>-->
+<!--        </div>-->
+<!--        <p>1867 г.</p>-->
+<!--        <p>Толстой Лев Николаевич</p>-->
+<!--    </div>-->
+<!--    <div class="input-button-container">-->
+<!--        <input type="text" placeholder="Читательский билет №" />-->
+<!--        <button type="button">Найти</button> -->
+<!--    </div>-->
     <div class="info">
         <div class="name">
             <p>Читательский билет № 123456</p>
