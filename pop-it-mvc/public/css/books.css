@@ -31,8 +31,11 @@ h1{
     font-size: 14px;
     color: #fff;
 }
+
 .book{
     display: flex;
+    justify-content: space-between;
+
 }
 
 h3{

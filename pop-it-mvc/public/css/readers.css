@@ -70,3 +70,8 @@ h3{
 .info{
     margin-right: 40px;
 }
+.reader{
+    display: flex;
+    justify-content: space-between;
+
+}

@@ -2,6 +2,7 @@
 
 namespace Controller;
 
+use Model\Reader;
 use Src\Auth\Auth;
 use Model\User;
 use Model\Post;
@@ -75,6 +76,7 @@ class Site
     }
     public function readers(): string
     {
-        return new View('site.readers');
+        $readers = Reader::all();
+        return new View('site.readers', ['readers' => $readers]);
     }
 }

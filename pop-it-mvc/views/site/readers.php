@@ -3,53 +3,26 @@
 <div class="page">
     <div class="readers">
         <div class="one-reader">
-            <div class="reader">
-                <div class="info">
-                    <div class="name">
-                        <p>Читательский билет № 123456</p>
+            <?php
+                foreach ($readers as $readers) {
+                    echo "
+                     <div class=\"reader\">
+                <div class=\"info\">
+                    <div class=\"name\">
+                        <p>Читательский билет № $readers->id</p>
                     </div>
-                    <h3>Корнилова Юлия Константиновна</h3>
-                    <p>+7 - 983 - 343 - 09 - 38</p>
+                    <h3>$readers->surname $readers->name $readers->patronymic</h3>
+                    <p>+$readers->number</p>
                 </div>
-                <?php
-                echo '<a href="/pop-it-mvc/reader" class="button_book">Подробнее</a>';
-                echo '<a href="/pop-it-mvc/issue" class="button_book">Выдать книгу</a>';
-                ?>
+             <div class='column'>
+             <a class='button_book' href='".app()->route->getUrl('/reader?id='.$readers->id)."'>Подробнее</a>
+                <a href=\"/pop-it-mvc/issue\" class=\"button_book\">Выдать книгу</a>
+             </div>
             </div>
-            <img src="img/история.svg"
-        </div>
-        <div class="one-reader">
-            <div class="reader">
-                <div class="info">
-                    <div class="name">
-                        <p>Читательский билет № 123456</p>
-                    </div>
-                    <h3>Корнилова Юлия Константиновна</h3>
-                    <p>+7 - 983 - 343 - 09 - 38</p>
-                </div>
-                <?php
-                echo '<a href="/pop-it-mvc/reader" class="button_book">Подробнее</a>';
-                echo '<a href="/pop-it-mvc/issue" class="button_book">Выдать книгу</a>';
-                ?>
-            </div>
-            <img src="img/история.svg"
-        </div>
-        <div class="one-reader">
-            <div class="reader">
-                <div class="info">
-                    <div class="name">
-                        <p>Читательский билет № 123456</p>
-                    </div>
-                    <h3>Корнилова Юлия Константиновна</h3>
-                    <p>+7 - 983 - 343 - 09 - 38</p>
-                </div>
-                <?php
-                echo '<a href="/pop-it-mvc/reader" class="button_book">Подробнее</a>';
-                echo '<a href="/pop-it-mvc/issue" class="button_book">Выдать книгу</a>';
-                ?>
-            </div>
-            <img src="img/история.svg"
-        </div>
+            <img src=\"img/история.svg\">
+                    ";
+                }
+            ?>
 
     </div>
 </div>
