@@ -1,7 +1,7 @@
 <link rel ="stylesheet" href="/pop-it-mvc/public/css/reader.css">
 <h1>Читатель</h1>
 <?php
-foreach ($readers as $reader) {
+foreach ($readers as $readers) {
     echo "  
             <div class=\"full_book\">
                 <div class=\"about_book\">

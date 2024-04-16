@@ -67,3 +67,6 @@ p{
     font-size: 16px;
     color: #505050;
 }
+button:hover{
+    background-color: #505050;
+}
