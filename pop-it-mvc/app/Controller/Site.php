@@ -10,6 +10,8 @@ use Src\View;
 use Src\Request;
 use Src\Validator\Validator;
 use Model\Book;
+use Model\Author;
+
 
 class Site
 {
@@ -48,10 +50,8 @@ class Site
 
     public function book(Request $request): string
     {
-        //Если просто обращение к странице, то отобразить форму
-        if ($request->method === 'GET') {
-            return new View('site.book');
-        }
+        $book = Book::all();
+        return new View('site.book', ['book' => $book]);
     }
     public function accept(Request $request): string
     {
@@ -68,11 +68,13 @@ class Site
 
     public function reader(): string
     {
-        return new View('site.reader');
+        $reader = Reader::all();
+        return new View('site.reader', ['reader' => $reader]);
     }
         public function books(): string
     {
-        return new View('site.books');
+        $books = Book::all();
+        return (new View())->render('site.books', ['books' => $books]);
     }
     public function readers(): string
     {

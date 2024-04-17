@@ -1,63 +1,38 @@
 <link rel ="stylesheet" href="/pop-it-mvc/public/css/books.css">
 <h1>Книги</h1>
-<div class="page">
-    <div class="books">
-        <div class="one-book">
-            <div class="book">
-                <div class="info">
-                    <div class="name">
-                        <h3>Война и мир</h3>
-                        <p class="price">1493 ₽</p>
-                        <p class="status">Статус: Выдана</p>
+    <?php
+    foreach ($books as $book) {
+        $author = \Model\Author::where('id', $book->author)->first();
+        $authorfullName = $author->name . ' ' . $author->surname . ' ' . $author->patronymic;
+        $type_edition = \Model\Editions::where('id', $book->type_edition)->first();
+        $typeeditionname = $type_edition->type_edition;
+            echo "
+    
+                <div class='book'>
+                    <div class='info'>
+                        <div class='name'>
+                            <h3>$book->title</h3>
+                            <p class='price'>$book->price ₽</p>
+                            <p class='status'>Статус: Выдана</p>
+                        </div>
+                        <p class='type'>Тип издания: $typeeditionname</p>
+                        <p>Год издания:$book->year_edition г.</p>
+                        <p>ФИО автора: $authorfullName</p>
                     </div>
-                    <p>1867 г.</p>
-                    <p>Толстой Лев Николаевич</p>
+                    <a class=\"button\" href='" . app()->route->getUrl('/book?id=' . $book->id) . "'>Подробнее</a>
                 </div>
-                <?php
-                echo '<a href="/pop-it-mvc/book" class="button">Подробнее</a>';
 
-                ?>
-            </div>
-            <img src="img/история.svg"
-        </div>
+                ";
 
-        <div class="one-book">
-            <div class="book">
-                <div class="info">
-                    <div class="name">
-                        <h3>Война и мир</h3>
-                        <p class="price">1493 ₽</p>
-                        <p class="status">Статус: Выдана</p>
+    }
+    ?>
 
-                    </div>
-                    <p>1867 г.</p>
-                    <p>Толстой Лев Николаевич</p>
-                </div>
-                <?php
-                echo '<a href="/pop-it-mvc/book" class="button">Подробнее</a>';
-//                echo '<a href="/pop-it-mvc/issue" class="button_book">Выдать книгу</a>';
-                ?>
-            </div>
-            <img class="logo" src="img/история.svg"
-        </div>
-        <div class="one-book">
-            <div class="book">
-                <div class="info">
-                    <div class="name">
-                        <h3>Война и мир</h3>
-                        <p class="price">1493 ₽</p>
-                        <p class="status">Статус: Выдана</p>
-                    </div>
-                    <p>1867 г.</p>
-                    <p>Толстой Лев Николаевич</p>
-                </div>
-                <?php
-                echo '<a href="/pop-it-mvc/book" class="button">Подробнее</a>';
-//                echo '<a href="/pop-it-mvc/issue" class="button_book">Выдать книгу</a>';
-                ?>
-            </div>
-            <img class="logo" src="img/история.svg"
-        </div>
-    </div>
-</div>
+
+
+
+
+
+
+
+
 

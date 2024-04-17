@@ -15,7 +15,7 @@ h1{
 }
 .about_book{
     font-family: "Montserrat", sans-serif;
-    background-image: linear-gradient(90deg, #3f1d1d 0%,transparent 50%), url("474.png");
+    background-image: linear-gradient(90deg, #3f1d1d 0%,transparent 50%);
     background-size: auto;
     border-radius: 10px 10px 0 0;
     width: 680px;
