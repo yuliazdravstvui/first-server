@@ -1,5 +1,9 @@
 <link rel ="stylesheet" href="/pop-it-mvc/public/css/books.css">
 <h1>Книги</h1>
+<div class="input-button-container">
+    <input type="text" placeholder="Название книги" />
+    <button type="button">Найти</button> <!-- Иконка увеличительного стекла -->
+</div>
     <?php
     foreach ($books as $book) {
         $author = \Model\Author::where('id', $book->author)->first();

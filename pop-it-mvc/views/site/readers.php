@@ -2,6 +2,10 @@
 <h1>Читатели</h1>
 <div class="page">
     <div class="readers">
+        <div class="input-button-container">
+            <input type="text" placeholder="Введите данные" />
+            <button type="button">Найти</button> <!-- Иконка увеличительного стекла -->
+        </div>
         <div class="one-reader">
             <?php
                 foreach ($readers as $readers) {

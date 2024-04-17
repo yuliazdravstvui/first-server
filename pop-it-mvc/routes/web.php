@@ -15,4 +15,4 @@ Route::add('GET', '/reader', [Controller\Site::class, 'reader']);
 Route::add(['GET', 'POST'], '/add_book', [Controller\Add::class, 'add_book']);
 Route::add(['GET', 'POST'], '/add_reader', [Controller\Add::class, 'add_reader']);
 Route::add(['GET', 'POST'], '/issue', [Controller\Site::class, 'issue']);
-
+Route::add(['GET', 'POST'], '/add_author', [Controller\Add::class, 'add_author']);

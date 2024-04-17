@@ -15,7 +15,7 @@ h1{
 }
 .input-button-container {
     margin-bottom: 20px;
-    border: 2px solid #e4dfd8;
+    border: 2px solid #d8c3a4;;
     border-radius: 5px;
     width: 494px;
     height: 40px;
@@ -61,6 +61,8 @@ h1{
     color: #e4dfd8;
 }
 .page{
+    display: flex;
+    flex-direction: column;
     font-family: "Montserrat", sans-serif;
     margin-left: 74px;
 }
@@ -126,7 +128,7 @@ fieldset{
 .input-container {
     flex-direction: column;
     margin-bottom: 20px;
-    border: 2px solid #e4dfd8;
+    border: 2px solid #d8c3a4;
     border-radius: 5px;
     width: 494px;
     display: flex;
@@ -151,4 +153,22 @@ fieldset{
 }
 button:hover{
     background-color: #b4ad9d;
+}
+/*.author_list{*/
+/*    font-family: "Montserrat", sans-serif;*/
+/*    color: #505050;*/
+/*    border: 2px solid #d8c3a4;*/
+/*    border-radius: 5px;*/
+/*    height: 40px;*/
+/*    display: flex;*/
+/*}*/
+/*.author_list input {*/
+/*    flex-grow: 1; !* Поле занимает всё доступное пространство *!*/
+/*    border: none; !* Границы отсутствуют *!*/
+/*    padding: 5px;*/
+/*    outline: none; !* Очертание при фокусе отсутствует *!*/
+/*}*/
+form{
+    display: flex;
+    flex-direction: column;
 }
