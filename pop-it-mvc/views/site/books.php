@@ -1,14 +1,20 @@
 <link rel ="stylesheet" href="/pop-it-mvc/public/css/books.css">
 <h1>Книги</h1>
-<div class="input-button-container">
-    <input type="text" placeholder="Название книги" />
-    <button type="button">Найти</button> <!-- Иконка увеличительного стекла -->
-</div>
+<form method="post" class="input-button-container">
+    <input type="text" placeholder="Поиск" name="search">
+    <button type="submit">Найти</button>
+    <a class="button_reset" href="<?=app()->route->getUrl('/books'); ?>">Сбросить</a>
+</form>
+<span><?= $message ?? '';?></span>
+<!--<div class="input-button-container">-->
+<!--    <input type="text" placeholder="Название книги" />-->
+<!--    <button type="button">Найти</button> Иконка увеличительного стекла -->
+<!--</div>-->
     <?php
     foreach ($books as $book) {
-        $author = \Model\Author::where('id', $book->author)->first();
+        $author = \Model\Author::where('id_author', $book->id_author)->first();
         $authorfullName = $author->name . ' ' . $author->surname . ' ' . $author->patronymic;
-        $type_edition = \Model\Editions::where('id', $book->type_edition)->first();
+        $type_edition = \Model\Editions::where('id_type_edition', $book->id_type_edition)->first();
         $typeeditionname = $type_edition->type_edition;
             echo "
     

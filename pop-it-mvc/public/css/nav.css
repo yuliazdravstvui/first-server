@@ -30,7 +30,7 @@ body{
     font-family: "Montserrat", sans-serif;
     display: flex;
 }
-a{
+nav > a{
     justify-items: center;
     width: 213px;
     height: 43px;

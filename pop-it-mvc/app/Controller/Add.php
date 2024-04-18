@@ -11,13 +11,32 @@ class Add {
 
     public function add_book(Request $request): string
     {
-        if ($request->method === 'POST' && Book::create($request->all())) {
-            return new View('site.add_book');
-        }
-
         $author = Author::all();
         $edition = Editions::all();
-        return new View('site.add_book', ['edition' => $edition, 'author' => $author]);
+        if ($request->method === 'POST') {
+            {
+                $file = $request->files();
+                $fileName = $file['img']['name'];
+                $path = ('/pop-it-mvc/public/img/' . $fileName);
+
+                $data = $request->all();
+                $author = Author::find($data['id_author']);
+                $edition = Editions::find($data['id_type_edition']);
+                if ($author && $edition) {
+                    Book::create([
+                        'title' => $data['title'],
+                        'id_author' => $data['id_author'],
+                        'price' => $data['price'],
+                        'year_edition' => $data['year_edition'],
+                        'id_type_edition' => $data['id_type_edition'],
+                        'annotation' => $data['annotation'],
+                        'img' => $path,
+                    ]);
+                    app()->route->redirect('/add_book');
+                }
+            }
+        }
+        return (new View())->render('site.add_book', ['author' => $author, 'edition' => $edition]);
     }
 
     public function add_reader(Request $request): string

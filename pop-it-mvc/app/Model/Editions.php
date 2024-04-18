@@ -11,4 +11,5 @@ class Editions extends Model {
         'type_edition',
 
     ];
+    protected $primaryKey = 'id_type_edition';
 }

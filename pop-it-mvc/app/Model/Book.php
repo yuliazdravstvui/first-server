@@ -11,8 +11,11 @@ class Book extends Model
         'title',
         'year_edition',
         'price',
+        'id_author',
+        'id_type_edition',
         'annotation',
         'img',
     ];
+    public $table = 'books';
 
 }

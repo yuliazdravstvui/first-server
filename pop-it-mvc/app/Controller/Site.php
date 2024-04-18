@@ -62,8 +62,9 @@ class Site
     }
     public function issue(): string
     {
+        $reader = Reader::all();
         $book = Book::all();
-        return new View('site.issue', ['book' => $book]);
+        return new View('site.issue', ['book' => $book, 'reader' => $reader]);
     }
 
     public function reader(): string
@@ -71,14 +72,51 @@ class Site
         $reader = Reader::all();
         return new View('site.reader', ['reader' => $reader]);
     }
-        public function books(): string
+    public function books(Request $request): string
     {
-        $books = Book::all();
-        return (new View())->render('site.books', ['books' => $books]);
+        $message = null;
+        $books = [];
+        if($request->method==='POST'){
+            if ($request->get('search')) {
+                $search = $request->get('search');
+                if ($search) {
+                    $books = Book::where('title', 'like', '%' . $search . '%')->get();
+                    $author = Author::all();
+                }
+                if ($books->isEmpty()) {
+                    $message = 'Книги с таким названием отсутствуют';
+                }
+
+            }
+        } else {
+            $books = Book::all();
+            $author = Author::all();
+        };
+
+        return (new View())->render('site.books', ['books' => $books, 'author' => $author, 'message' => $message ?? null]);
+
     }
-    public function readers(): string
+    public function readers(Request $request): string
     {
-        $readers = Reader::all();
-        return new View('site.readers', ['readers' => $readers]);
+        $message = null;
+        $readers = [];
+        if($request->method==='POST'){
+            if ($request->get('search')) {
+                $search = $request->get('search');
+                if ($search) {
+                    $readers = Reader::where('surname', 'like', '%' . $search . '%')->get();
+
+                }
+                if ($readers->isEmpty()) {
+                    $message = 'читатели отсутствуют';
+                }
+
+            }
+        } else {
+            $readers = Reader::all();
+        };
+
+        return (new View())->render('site.readers', ['readers' => $readers, 'message' => $message ?? null]);
+
     }
 }
