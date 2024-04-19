@@ -10,7 +10,7 @@ $bookID = $_GET['id'] ?? null;
         if ($book->id == $bookID) {
             echo "
                                         <div class=\"full_book\">
-                                            <div class=\"about_book\" style=\"background-image: linear-gradient(90deg, #3f1d1d 0%,transparent 50%); url('$book->img');\">
+                                            <div class=\"about_book\" style=\"background-image: linear-gradient(90deg, #3f1d1d 0%,transparent 50%), url('/pop-it-mvc/public/img/1.jpg');\">
                                                 <div class=\"name\">
                                                     <h3>$book->title</h3>
                                                     <p class=\"price\">$book->price ₽</p>

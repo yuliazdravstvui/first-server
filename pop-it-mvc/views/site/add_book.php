@@ -36,7 +36,7 @@
         <div>
             <textarea class="input-button-container" cols="50" rows="3" name="annotation" placeholder="Краткое описание книги"></textarea>
         </div>
-            <input type="file" name="img" accept="image/*">
+
 
         <button type="submit">Создать книгу</button>
     </div>

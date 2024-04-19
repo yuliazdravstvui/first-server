@@ -30,6 +30,7 @@
                     <a href="<?= app()->route->getUrl('/accept') ?>">Принять книгу</a>
                     <a href="<?= app()->route->getUrl('/add_author') ?>">Добавить автора </a>
                     <a href="<?= app()->route->getUrl('/add_book') ?>">Добавить книгу </a>
+                    <a href="<?= app()->route->getUrl('/pictures') ?>">Картинки</a>
 <!--                    <a href="--><?php //= app()->route->getUrl('/issue') ?><!--">Выдача</a>-->
                     <a href="<?= app()->route->getUrl('/logout') ?>">Выход </a>
                 <?php else: ?>

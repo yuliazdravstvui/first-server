@@ -60,12 +60,6 @@ class Site
             return new View('site.accept');
         }
     }
-    public function issue(): string
-    {
-        $reader = Reader::all();
-        $book = Book::all();
-        return new View('site.issue', ['book' => $book, 'reader' => $reader]);
-    }
 
     public function reader(): string
     {

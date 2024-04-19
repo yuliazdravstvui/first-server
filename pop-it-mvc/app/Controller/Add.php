@@ -6,8 +6,34 @@ use Model\Reader;
 use Src\View;
 use Src\Request;
 use Model\Editions;
+use Model\Image;
 
 class Add {
+    public function issue(): string
+    {
+        $reader = Reader::all();
+        $book = Book::all();
+        return new View('site.issue', ['book' => $book, 'reader' => $reader]);
+    }
+
+    public function pictures(Request $request): string
+    {
+        $image = Image::all();
+
+        if ($request->method === 'POST') {
+            $image = $_FILES['image']['name'];
+            $imagePath = $_SERVER['DOCUMENT_ROOT'] . "/pop-it-mvc/public/img/";
+            $uploaded_file = $imagePath . basename($image);
+            move_uploaded_file($_FILES['image']['tmp_name'], $uploaded_file);
+
+            if (Image::create(['image' => $uploaded_file, 'name' => $image])) {
+                app()->route->redirect('/pictures');
+            }
+        }
+
+        return (new View())->render('site.img', ['image' => $image]);
+    }
+
 
     public function add_book(Request $request): string
     {
