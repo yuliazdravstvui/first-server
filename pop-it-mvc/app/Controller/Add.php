@@ -7,14 +7,13 @@ use Src\View;
 use Src\Request;
 use Model\Editions;
 use Model\Image;
+use Model\Issue;
+use Model\User;
+use Src\Auth\Auth;
+use Src\Session;
 
 class Add {
-    public function issue(): string
-    {
-        $reader = Reader::all();
-        $book = Book::all();
-        return new View('site.issue', ['book' => $book, 'reader' => $reader]);
-    }
+
 
     public function pictures(Request $request): string
     {
@@ -80,6 +79,26 @@ class Add {
         }
 
         return new View('site.add_author');
+    }
+    public function issue(Request $request): string
+    {
+        $book = Book::all();
+
+        if ($request->method === 'POST') {
+            $id_data = $request->id;
+            $data = $request->all();
+            $book = Book::find($data['book']);
+            Issue::create([
+                'librarian' => Session::get('id') ?? 0,
+                'reader' => $id_data,
+                'book' => $data['book'],
+                'date_of_issue' => date('Y.m.d'),
+                'return_date' => $data['date']
+            ]);
+            app()->route->redirect('/reader?id='.$id_data);
+        }
+
+        return (new View())->render('site.issue', ['book' => $book]);
     }
 
 }

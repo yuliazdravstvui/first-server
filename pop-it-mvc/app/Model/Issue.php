@@ -14,7 +14,7 @@ class Issue extends Model {
         'date_of_issue',
         'return_date',
         'actual_date',
-        'status',
+        'id_status'
 
     ];
     public $table = 'book_issuance';
