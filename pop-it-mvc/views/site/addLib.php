@@ -1,10 +1,10 @@
-<link rel ="stylesheet" href="/pop-it-mvc/public/css/sign.css">
+<link rel ="stylesheet" href="/../../public/css/sign.css">
 <h1>Добавление нового библиотекаря</h1>
 <div class="log">
     <h3><?= $message ?? ''; ?></h3>
     <form method="post">
         <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
-        <img class="logo" src="img/logo.svg"
+        <img class="logo" src="/../../img/logo.svg"
         <h2>Библиотека</h2>
         <div class="login">
             Логин <input type="text" name="login">

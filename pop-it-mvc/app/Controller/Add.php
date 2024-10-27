@@ -8,11 +8,27 @@ use Src\Request;
 use Model\Editions;
 use Model\Image;
 use Model\Issue;
-use Model\User;
-use Src\Auth\Auth;
 use Src\Session;
-
+use Src\Validator\Validator;
 class Add {
+    public function issue(Request $request): string
+    {
+        $book = Book::all();
+        if ($request->method === 'POST') {
+            $id_data = $request->id;
+            $data = $request->all();
+            $book = Book::find($data['book']);
+            Issue::create([
+                'librarian' => Session::get('id') ?? 0,
+                'reader' => $id_data,
+                'book' => $data['book'],
+                'date_of_issue' => date('Y.m.d'),
+                'return_date' => $data['date']
+            ]);
+            app()->route->redirect('/reader?id='.$id_data);
+        }
+        return (new View())->render('site.issue', ['book' => $book]);
+    }
 
 
     public function pictures(Request $request): string
@@ -21,7 +37,7 @@ class Add {
 
         if ($request->method === 'POST') {
             $image = $_FILES['image']['name'];
-            $imagePath = $_SERVER['DOCUMENT_ROOT'] . "/pop-it-mvc/public/img/";
+            $imagePath = $_SERVER['DOCUMENT_ROOT'] . "/../../public/img/";
             $uploaded_file = $imagePath . basename($image);
             move_uploaded_file($_FILES['image']['tmp_name'], $uploaded_file);
 
@@ -66,39 +82,51 @@ class Add {
 
     public function add_reader(Request $request): string
     {
-        if ($request->method === 'POST' && Reader::create($request->all())) {
-            return new View('site.add_reader');
+        if ($request->method === 'POST') {
+
+            $validator = new Validator($request->all(), [
+                'surname' => ['required:readers,surname'],
+                'name' => ['required:readers,name'],
+                'number' => ['required:readers,number'],
+                'address' => ['required:readers,address']
+            ], [
+                'required' => 'Поле :field обязательно'
+            ]);
+
+            if($validator->fails()) {
+                return new View('site.add_reader',
+                    ['message' => json_encode($validator->errors(), JSON_UNESCAPED_UNICODE)]);
+            }
+
+            if (Reader::create($request->all())) {
+                app()->route->redirect('/add_reader');
+            }
         }
 
         return new View('site.add_reader');
     }
     public function add_author(Request $request): string
     {
-        if ($request->method === 'POST' && Author::create($request->all())) {
-            return new View('site.add_author');
+        if ($request->method === 'POST') {
+            $validator = new Validator($request->all(), [
+                'surname' => ['required:authors,surname'],
+                'name' => ['required:authors,name']
+            ], [
+                'required' => 'Поле :field обязательно'
+            ]);
+
+            if($validator->fails()) {
+                return new View('site.add_author',
+                    ['message' => json_encode($validator->errors(), JSON_UNESCAPED_UNICODE)]);
+            }
+
+            if(Author::create($request->all())) {
+                app()->route->redirect('/add_author');
+            }
         }
 
         return new View('site.add_author');
     }
-    public function issue(Request $request): string
-    {
-        $book = Book::all();
 
-        if ($request->method === 'POST') {
-            $id_data = $request->id;
-            $data = $request->all();
-            $book = Book::find($data['book']);
-            Issue::create([
-                'librarian' => Session::get('id') ?? 0,
-                'reader' => $id_data,
-                'book' => $data['book'],
-                'date_of_issue' => date('Y.m.d'),
-                'return_date' => $data['date']
-            ]);
-            app()->route->redirect('/reader?id='.$id_data);
-        }
-
-        return (new View())->render('site.issue', ['book' => $book]);
-    }
 
 }

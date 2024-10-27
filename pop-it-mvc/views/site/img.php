@@ -1,4 +1,4 @@
-<link rel ="stylesheet" href="/pop-it-mvc/public/css/img.css">
+<link rel ="stylesheet" href="/../../public/css/img.css">
 <h1>Картиночки</h1>
 
 <div class="card">
@@ -9,7 +9,7 @@
 
     <?php if($image->isNotEmpty()){
         foreach ($image as $image) {
-            echo "<img width='250' src='/pop-it-mvc/public/img/$image->name'>";
+            echo "<img width='250' src='/../../public/img/$image->name'>";
         }
     }
     ?>

@@ -1,22 +1,13 @@
 {
     "name": "yuliazdravstvui/firstserver",
-    "description": "Perfect project",
     "type": "project",
     "license": "MIT",
-    "minimum-stability": "dev",
-    "require": {
-        "php": "^7.4 | ^8.0",
-        "illuminate/database": "10.x-dev",
-        "illuminate/events": "10.x-dev",
-        "nikic/fast-route": "2.0.x-dev"
-
-    },
-    "autoload": {
-        "psr-4": {
-            "Src\\": "pop-it-mvc/core/Src/",
-            "": "pop-it-mvc/app/"
+    "authors": [
+        {
+            "name": "yuliazdravstvui",
+            "email": "topolya.krutaya@gmail.com"
         }
-    }
-
-
+    ],
+    "minimum-stability": "dev",
+    "require": {}
 }

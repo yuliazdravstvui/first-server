@@ -11,7 +11,8 @@ use Src\Request;
 use Src\Validator\Validator;
 use Model\Book;
 use Model\Author;
-
+use Model\Issue;
+use Model\Statuses;
 
 class Site
 {
@@ -50,20 +51,20 @@ class Site
 
     public function book(Request $request): string
     {
-        $book = Book::all();
-        return new View('site.book', ['book' => $book]);
-    }
-    public function accept(Request $request): string
-    {
-        //Если просто обращение к странице, то отобразить форму
-        if ($request->method === 'GET') {
-            return new View('site.accept');
-        }
+        $book = Book::where('id', $request->get('id'))->first();
+        return (new View())->render('site.book', ['book' => $book]);
     }
 
-    public function reader(): string
+    public function reader(Request $request): string
     {
-        $reader = Reader::all();
+        $reader = Reader::where('id', $request->get('id'))->first();
+        if ($request->method === 'POST') {
+            Issue::where('id', $request->get('issue_id'))->first()->update([
+                'actual_date' => date('Y.m.d'),
+                'id_status' => 1
+            ]);
+            app()->route->redirect('/reader?id=' . $reader->id);
+        }
         return new View('site.reader', ['reader' => $reader]);
     }
     public function books(Request $request): string

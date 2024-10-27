@@ -1,4 +1,4 @@
-<link rel ="stylesheet" href="/pop-it-mvc/public/css/accept.css">
+<link rel ="stylesheet" href="/../../public/css/accept.css">
 <h1>Сдача книги</h1>
 <div class="page">
     <div class="input-button-container">

@@ -1,4 +1,4 @@
-<link rel ="stylesheet" href="/pop-it-mvc/public/css/login.css">
+<link rel ="stylesheet" href="/../../public/css/login.css">
     <h1>Авторизация</h1>
 
 <div class="log">
@@ -12,7 +12,7 @@
     <form method="post">
         <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
 
-        <img class="logo" src="img/logo.svg"
+        <img class="logo" src="/../../img/logo.svg"
         <h2>Библиотека</h2>
         <div class="login">
             Логин <input type="text" name="login">

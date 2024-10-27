@@ -1,4 +1,4 @@
-<link rel ="stylesheet" href="/pop-it-mvc/public/css/add_book.css">
+<link rel ="stylesheet" href="/../../public/css/add_book.css">
 <h1>Добавление книги</h1>
 <form method="post" enctype="multipart/form-data">
     <div class="page">

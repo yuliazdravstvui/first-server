@@ -1,65 +1,25 @@
-<link rel ="stylesheet" href="/pop-it-mvc/public/css/issue.css">
-<h1>Выдача книги</h1>
-<form method="post">
-    <div class="page">
-        <div class="form">
-                <p>Книга:</p>
-                <div class="book_list">
-                    <input type="text" autocomplete="off" list="books" placeholder="Поиск...">
-                    <datalist id="books">
-                        <?php
-                        foreach ($book as $book){
-                            echo "<option value=\"$book->title\">$book->title</option>";
-                        }
-                        ?>
-                    </datalist>
-                </div>
-
+<link rel="stylesheet" href="/../../public/css/issue.css">
+<div>
+    <form class="iss_form" method="post">
+        <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
+        <h2>Выдача книги</h2>
+        <div>
+            <p>Книга:</p>
+            <div class="book_list">
+                <select name="book">
+                    <?php
+                    foreach ($book as $book){
+                        echo "<option value=\"$book->id\">$book->title</option>";
+                    }
+                    ?>
+                </select>
+            </div>
         </div>
-    <!--    <div class="inform">-->
-    <!--        <div class="name">-->
-    <!--            <h3>Война и мир</h3>-->
-    <!--        </div>-->
-    <!--        <p>1867 г.</p>-->
-    <!--        <p>Толстой Лев Николаевич</p>-->
-    <!--    </div>-->
-    <!--    <div class="input-button-container">-->
-    <!--        <input type="text" placeholder="Читательский билет №" />-->
-    <!--        <button type="button">Найти</button> -->
-    <!--    </div>-->
-        <div class="reader">
-            <?php
-
-            $readerID = $_GET['id'] ?? null;
-            foreach ($reader as $reader) {
-                if ($reader->id == $readerID) {
-                    echo "
-                                           <div class=\"info\">
-                            <div class=\"name\">
-                                <p>Читательский билет № $reader->id</p>
-                            </div>
-                            <h3>$reader->surname $reader->name $reader->patronymic</h3>
-                            <p>+$reader->number</p>
-                        </div>
-                        <h4>Дата выдачи: 12.04.2024</h4>
-                     <div class='column'>
-                     <button type=\"submit\">Выдать книгу</button>
-                     </div>
-                                              ";
-                    break;
-                }
-            }
-            ?>
+        <div>
+            <p>Дата возврата:</p>
+            <input type="date" id="date" name="date" required>
         </div>
+        <button>Выдать книгу</button>
+    </form>
 
-    <!--    <div class="info">-->
-    <!--        <div class="name">-->
-    <!--            <p>Читательский билет № 123456</p>-->
-    <!--        </div>-->
-    <!--        <h3>Корнилова Юлия Константиновна</h3>-->
-    <!--        <p>+7 - 983 - 343 - 09 - 38</p>-->
-    <!--    </div>-->
-    <!--    <h4>Дата выдачи: 12.04.2024</h4>-->
-    <!--    <button type="submit">Выдать книгу</button>-->
-    </div>
-</form>
+</div>

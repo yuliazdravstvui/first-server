@@ -1,4 +1,4 @@
-<link rel ="stylesheet" href="/pop-it-mvc/public/css/books.css">
+<link rel ="stylesheet" href="/../../public/css/books.css">
 <h1>Книги</h1>
 <form method="post" class="input-button-container">
     <input type="text" placeholder="Поиск" name="search">
@@ -8,7 +8,7 @@
 <span><?= $message ?? '';?></span>
 <!--<div class="input-button-container">-->
 <!--    <input type="text" placeholder="Название книги" />-->
-<!--    <button type="button">Найти</button> Иконка увеличительного стекла -->
+<!--  <button type="button">Найти</button> -->
 <!--</div>-->
     <?php
     foreach ($books as $book) {
@@ -23,7 +23,6 @@
                         <div class='name'>
                             <h3>$book->title</h3>
                             <p class='price'>$book->price ₽</p>
-                            <p class='status'>Статус: Выдана</p>
                         </div>
                         <p class='type'>Тип издания: $typeeditionname</p>
                         <p>Год издания:$book->year_edition г.</p>

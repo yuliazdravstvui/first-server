@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <link rel ="stylesheet" href="/pop-it-mvc/public/css/nav.css">
+    <link rel ="stylesheet" href="/../..//public/css/nav.css">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Pop it MVC</title>
 </head>
@@ -12,8 +12,8 @@
 <header>
     <nav>
         <div class="head">
-        <img src="img/логотип.svg">
-        <img src="img/Библиотека.svg">
+        <img src="/../../img/логотип.svg">
+        <img src="/../../img/Библиотека.svg">
         </div>
         <?php
             if (!app()->auth::check()):
@@ -25,12 +25,14 @@
                 if ($user&&!$user->checkRole()):
                 ?>
                     <a href="<?= app()->route->getUrl('/add_reader') ?>">Добавить читателя </a>
-                    <a href="<?= app()->route->getUrl('/books') ?>">Книги</a>
                     <a href="<?= app()->route->getUrl('/readers') ?>">Читатели</a>
-                    <a href="<?= app()->route->getUrl('/accept') ?>">Принять книгу</a>
-                    <a href="<?= app()->route->getUrl('/add_author') ?>">Добавить автора </a>
                     <a href="<?= app()->route->getUrl('/add_book') ?>">Добавить книгу </a>
-                    <a href="<?= app()->route->getUrl('/pictures') ?>">Картинки</a>
+                    <a href="<?= app()->route->getUrl('/books') ?>">Книги</a>
+
+<!--                    <a href="--><?php //= app()->route->getUrl('/accept') ?><!--">Принять книгу</a>-->
+                    <a href="<?= app()->route->getUrl('/add_author') ?>">Добавить автора </a>
+
+<!--                    <a href="--><?php //= app()->route->getUrl('/pictures') ?><!--">Картинки</a>-->
 <!--                    <a href="--><?php //= app()->route->getUrl('/issue') ?><!--">Выдача</a>-->
                     <a href="<?= app()->route->getUrl('/logout') ?>">Выход </a>
                 <?php else: ?>

@@ -7,6 +7,7 @@ use Model\User;
 use Model\Post;
 use Src\View;
 use Src\Request;
+use Src\Validator\Validator;
 
 class Admin
 {
